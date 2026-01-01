@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-01-01T21:00:09.374494" rpa="false" schemaversion="5">
+<suite id="s1" name="Test1bot" source="C:\SoftEng\TestAutomationLab\Test1\Test1bot.robot">
+<test id="s1-t1" name="TC_01: Open website" line="11">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-01T21:00:09.786905" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002513F2712B0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-01T21:00:09.786027" elapsed="0.000958"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-01-01T21:00:09.787889" level="INFO">${options.binary_location} = C:/ChromeTest/chrome-win64/chrome.exe</msg>
+<var>${options.binary_location}</var>
+<arg>${CHROME_BROWSER_PATH}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-01-01T21:00:09.787445" elapsed="0.000481"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-01T21:00:09.790079" level="INFO">${service} = &lt;selenium.webdriver.chrome.service.Service object at 0x000002513F270C20&gt;</msg>
+<var>${service}</var>
+<arg>sys.modules["selenium.webdriver.chrome.service"].Service(executable_path=r"${CHROME_DRIVER_PATH}")</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-01T21:00:09.788325" elapsed="0.001813"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2026-01-01T21:00:09.790982" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<arg>service=${service}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2026-01-01T21:00:09.790623" elapsed="1.708913"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>${delay}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2026-01-01T21:00:11.500471" elapsed="0.001267"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-01-01T21:00:11.512937" level="INFO">Opening url 'http://localhost:7272/StarterFiles/Registration.html'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-01-01T21:00:11.512078" elapsed="6.023262"/>
+</kw>
+<status status="PASS" start="2026-01-01T21:00:09.784185" elapsed="7.751591"/>
+</test>
+<status status="PASS" start="2026-01-01T21:00:09.377052" elapsed="8.159373"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test1bot" id="s1" pass="1" fail="0" skip="0">Test1bot</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
